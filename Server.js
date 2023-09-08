@@ -12,7 +12,7 @@ const PORT = process.env.PORT || 8000
 app.use(express.json())
 app.use(
     cors({
-      origin: ["http://localhost:3000", "https://fullstack-to-do-front.vercel.app"],
+      origin: ["http://localhost:3000", "https://todo-frontend1.vercel.app"],
       methods: ["GET", "POST", "PUT", "DELETE"],
       credentials: true,
       headers: ["Authorization", "Content-Type"],

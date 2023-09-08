@@ -10,7 +10,14 @@ const app = express();
 const PORT = process.env.PORT || 8000
 
 app.use(express.json())
-app.use(cors())
+app.use(
+    cors({
+      origin: ["http://localhost:3000", "https://fullstack-to-do-front.vercel.app"],
+      methods: ["GET", "POST", "PUT", "DELETE"],
+      credentials: true,
+      headers: ["Authorization", "Content-Type"],
+    })
+  );
 
 mongoose
 .connect(process.env.MONGODB_URL)
